@@ -32,6 +32,8 @@ class ReceiveIncomingCoil extends Component
     }
 
     public function searchInspection(ClientServiceProvider $clientServiceProvider){
+        $this->error = null;
+
         if($this->inspection)
         {
             try{
@@ -40,6 +42,7 @@ class ReceiveIncomingCoil extends Component
             }catch(\Exception $e){
                 $this->error = "Inspection not found. Please try again.";
             }
+
             if($this->inspections)
             {
                 $this->location = null;
